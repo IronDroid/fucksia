@@ -32,7 +32,7 @@ def config(request):
     else:
         url_prueba = 'http://sia.informatica.edu.bo'
         page = urllib2.urlopen(url_prueba)
-        siaurl = 'http://200.7.160.12/sia/www/'+page.geturl().split('/')[5]+'/presentacion.php'
+        siaurl = 'http://sia.informatica.edu.bo//sia/www/'+page.geturl().split('/')[5]+'/presentacion.php'
         return render(request, 'config.html',{
             'siaurl':siaurl})
 
