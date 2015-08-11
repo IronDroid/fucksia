@@ -1,0 +1,53 @@
+#contain-table{
+	height: auto;
+	padding: 1em 100px;
+}
+.rowgen{
+	margin-top: .2em;
+	display: table-row;
+	color: #eee;
+}
+.rowgen div{
+	background: #dedede;
+	border: solid .15em white;
+	cursor: pointer;
+	display: table-cell;
+	font-size: 14px;
+	height: 3.5em;
+	margin: .1em;
+	padding: .25em 0;
+	vertical-align: middle;
+	width: 80px;
+}
+.rowgen .hora{
+	background: #e74c3c;
+	-webkit-transition: .25s linear;
+	-moz-transition: .25s linear;
+	transition: .25s linear;
+}
+.rowgen .hora:hover{
+	background: #ec7063;
+}
+.rowgen .dia{
+	background: #1ABC9C;
+	cursor: default;
+}
+.rowgen .header{
+	background: #2980B9;
+	cursor: default;
+}
+.wrap_gen section{
+	display: inline-block;
+	vertical-align: top;
+	margin: 1em;
+	padding: .2em;
+	-moz-box-shadow: 3px 3px 10px 0 rgba(0,0,0,.7);
+	-webkit-box-shadow: 3px 3px 10px 0 rgba(0,0,0,.7);
+	box-shadow: 3px 3px 10px 0 rgba(0,0,0,.7);
+}
+.ini img{
+	max-width: 100%;
+}
+.sigla{
+	cursor: pointer;
+}

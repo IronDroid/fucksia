@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{% static "css/timeline.css" %}">
+{% endblock %}
+
+{% block section %}
+{% include "menu.html" %}
+<section class="card">
+	<h3>Cuenta algo sobre alguna materia ;)</h3>
+	<article id="comentarios">
+		<div id="crear-comentario">
+			{% csrf_token %}
+			<input class="form-control" type="text" placeholder="Opina algo...">
+			<div class="btn-group">
+				<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+					Clasificar y publicar
+				</button>
+				<ul class="dropdown-menu" role="menu">
+				{% for mat in materias %}
+					<li><a href="#">{{ mat }}</a></li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="container">
+			<div id="ul-comentarios">
+				{% for comentario in comentarios %}
+				<div class="comm">
+					<div class="header-comm">
+						<div class="av">
+							<a href="{{ comentario.estudiante.social_url }}">
+							<img title="{{ comentario.estudiante.name }}" src="{{ comentario.estudiante.avatar }}" alt="avatar">
+							</a>
+						</div>
+						<div class="desc">
+							<h4>{{ comentario.estudiante.name }}</h4>
+							<span title="{{ comentario.fecha }}">{{ comentario.fecha|date }}</span>
+						</div>
+						<span class="sigla-comm">{{ comentario.materia.sigla }}</span>
+					</div>
+					<div class="text-comm">{{ comentario.titulo }}</div>
+				</div>
+				{% empty %}
+					<h4>Se el primero en opinar algo :)</h4>
+				{% endfor %}
+			</div>
+		</div>
+	</article>
+	<article id="respuestas"></article>
+</section>
+{% endblock section %}

@@ -1,0 +1,1 @@
+web: gunicorn fucksia.wsgi --log-file -

@@ -1,0 +1,8 @@
+.est-par{
+	display: inline-block;
+	padding-left: 1em;
+}
+.est-par img{
+	height: 50px;
+	width: 50px;
+}

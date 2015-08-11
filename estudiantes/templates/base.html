@@ -1,0 +1,48 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Fucksia</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{% static "css/stylebase.css" %}">
+	{% block stylesheets %}{% endblock %}
+	<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+	<script src="{% static "js/discucion.js" %}"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	{% block scripts %}{% endblock %}
+</head>
+<body>
+	<header>
+		<h1>Fucksia</h1>
+		<div id="sample">
+			{% if user.is_authenticated %}
+				{% include "mini_perfil.html" %}
+			{% endif %}
+		</div>
+	</header>
+	{% block section %}{% endblock %}
+	<footer>
+		<div class="powered">
+			<a href="https://www.djangoproject.com/‎" target="_blank">
+				<img id="pony" src="{% static "img/pony.png" %}" alt="logo">
+				<img id="django" src="{% static "img/django-logo.png" %}" alt="logo">
+			</a>
+			<h5>Hecho con el poderoso Framework Django.</h5>
+			<h5>Cualquier pregunta, duda, queja o cualquier otra cosa, envia un correo a <strong>jhonlimaster@gmail.com</strong></h5>
+		</div>
+	</footer>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39967066-4', 'fucksia.herokuapp.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

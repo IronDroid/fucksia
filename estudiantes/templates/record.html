@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{% static "css/record.css" %}">
+{% endblock %}
+
+{% block section %}
+{% include "menu.html" %}
+	<section class="card">
+		<section class="record">
+		{% for semestre in data %}
+			<article class="semestre">
+				{% for mat in semestre %}
+					<div>{{ mat.sigla }} (100)</div>
+				{% endfor %}
+			</article>
+		{% endfor %}
+		</section>
+	</section>
+{% endblock section %}

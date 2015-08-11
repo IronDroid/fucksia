@@ -1,0 +1,17 @@
+#info_mat{
+	background: olive;
+	left: 462;
+	position: absolute;
+	top: 39;
+	padding: 0 .5em;
+}
+.periodo{
+	cursor: default;
+}
+.table{
+	width: 95%;
+	margin: 0 1em;
+}
+.indice{
+	font-weight: bold;
+}

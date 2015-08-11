@@ -1,0 +1,58 @@
+.av{
+	padding: .5em .5em 0 0;
+	margin: 0 0 .5em .5em;
+}
+.av img{
+	width: 50px;
+}
+.desc h4{
+	margin: 0;
+	font-weight: bold;
+}
+.desc span{
+	font-size: 12px;
+}
+.comm{
+	background: #ffffff;
+	cursor: default;
+	display: inline-block;
+	text-align: left;
+	vertical-align: top;
+	margin: 1em;
+	-webkit-box-shadow: 3px 3px 8px 0 rgba(0,0,0,.7);
+	-moz-box-shadow: 3px 3px 8px 0 rgba(0,0,0,.7);
+	box-shadow: 3px 3px 8px 0 rgba(0,0,0,.7);
+	width: 35%;
+}
+.sigla-comm{
+	background: #ffd740;
+	position: absolute;
+	padding: 0 .25em;
+	top: 5px;
+	right: -15px;
+	-webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,.7);
+	-moz-box-shadow: 1px 1px 2px 0 rgba(0,0,0,.7);
+	box-shadow: 1px 1px 2px 0 rgba(0,0,0,.7);
+	-webkit-transform: rotate(45deg);
+}
+.text-comm{
+	padding: 0 0 .5em 4.5em;
+}
+.header-comm{
+	position: relative;
+}
+.header-comm div{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+@media screen and (max-width:700px) {
+	.comm{
+		width: 75%;
+	}
+}
+@media screen and (max-width:400px) {
+	.comm{
+		width: 95%;
+	}
+}

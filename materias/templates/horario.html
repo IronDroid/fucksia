@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static "css/horarios.css" %}">
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "js/horarios.js" %}"></script>
+{% endblock scripts %}
+
+{% block section %}
+{% include "menu.html" %}
+<section id="materias" class="card inline">
+
+	Aqui puedes probar tus posibles horarios para esta gestion:
+	<h4>{{ gestion_actual }}</h4>
+	{% for mat in materias %}
+	<div class="materia">
+	    <div>{{ mat.materia.pk }}</div>
+	    {% for par in mat.paralelo %}
+	    <div class="radio-inline">
+	        <input type="radio" name="{{ mat.materia.pk }}" value="{{ mat.materia.pk }}{{ par }}">{{ par }}
+	    </div>
+	    {% endfor %}
+	</div>
+	{% endfor %}
+</section>
+
+<section class="card">
+	<table id="table" class="table table-striped">
+		<tr>
+			<td class="indice">Horas</td>
+			<td class="indice">Lunes</td>
+			<td class="indice">Martes</td>
+			<td class="indice">Miercoles</td>
+			<td class="indice">Jueves</td>
+			<td class="indice">Viernes</td>
+			<td class="indice">Sabado</td>
+		</tr>
+		<tr id="8-10">
+			<td class="indice">8-10</td>
+			<td id="LU8-10" class="periodo">&nbsp;</td>
+			<td id="MA8-10" class="periodo">&nbsp;</td>
+			<td id="MI8-10" class="periodo">&nbsp;</td>
+			<td id="JU8-10" class="periodo">&nbsp;</td>
+			<td id="VI8-10" class="periodo">&nbsp;</td>
+			<td id="SA8-10" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="10-12">
+			<td class="indice">10-12</td>
+			<td id="LU10-12" class="periodo">&nbsp;</td>
+			<td id="MA10-12" class="periodo">&nbsp;</td>
+			<td id="MI10-12" class="periodo">&nbsp;</td>
+			<td id="JU10-12" class="periodo">&nbsp;</td>
+			<td id="VI10-12" class="periodo">&nbsp;</td>
+			<td id="SA10-12" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="12-14">
+			<td class="indice">12-14</td>
+			<td id="LU12-14" class="periodo">&nbsp;</td>
+			<td id="MA12-14" class="periodo">&nbsp;</td>
+			<td id="MI12-14" class="periodo">&nbsp;</td>
+			<td id="JU12-14" class="periodo">&nbsp;</td>
+			<td id="VI12-14" class="periodo">&nbsp;</td>
+			<td id="SA12-14" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="14-16">
+			<td class="indice">14-16</td>
+			<td id="LU14-16" class="periodo">&nbsp;</td>
+			<td id="MA14-16" class="periodo">&nbsp;</td>
+			<td id="MI14-16" class="periodo">&nbsp;</td>
+			<td id="JU14-16" class="periodo">&nbsp;</td>
+			<td id="VI14-16" class="periodo">&nbsp;</td>
+			<td id="SA14-16" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="16-18">
+			<td class="indice">16-18</td>
+			<td id="LU16-18" class="periodo">&nbsp;</td>
+			<td id="MA16-18" class="periodo">&nbsp;</td>
+			<td id="MI16-18" class="periodo">&nbsp;</td>
+			<td id="JU16-18" class="periodo">&nbsp;</td>
+			<td id="VI16-18" class="periodo">&nbsp;</td>
+			<td id="SA16-18" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="18-20">
+			<td class="indice">18-20</td>
+			<td id="LU18-20" class="periodo">&nbsp;</td>
+			<td id="MA18-20" class="periodo">&nbsp;</td>
+			<td id="MI18-20" class="periodo">&nbsp;</td>
+			<td id="JU18-20" class="periodo">&nbsp;</td>
+			<td id="VI18-20" class="periodo">&nbsp;</td>
+			<td id="SA18-20" class="periodo">&nbsp;</td>
+		</tr>
+		<tr id="20-22">
+			<td class="indice">20-22</td>
+			<td id="LU20-22" class="periodo">&nbsp;</td>
+			<td id="MA20-22" class="periodo">&nbsp;</td>
+			<td id="MI20-22" class="periodo">&nbsp;</td>
+			<td id="JU20-22" class="periodo">&nbsp;</td>
+			<td id="VI20-22" class="periodo">&nbsp;</td>
+			<td id="SA20-22" class="periodo">&nbsp;</td>
+		</tr>
+	</table>
+</section>
+<section class="card">
+	<button class="btn btn-primary" id="clean_horario">Limpiar horario.</button>
+	<h4>Si te gusta esta forma de hacer tus horarios... entonces comparte esta plataforma.</h4>
+</section>
+
+<div id="info_popup">
+</div>
+
+{% endblock %}

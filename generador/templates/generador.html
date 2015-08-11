@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static "css/generador.css" %}">
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "js/generador.js" %}"></script>
+{% endblock scripts %}
+
+{% block section %}
+{% include "menu.html" %}
+<section id="materias" class="card inline">
+    <article class="loader">
+        <div id="l1"></div>
+        <div id="l2"></div>
+        <div id="l3"></div>
+        <div id="l4"></div>
+    </article>
+{% for mat in materias %}
+<div class="materia">
+    <div class="sigla">{{ mat.materia.pk }}</div>
+    {% for par in mat.paralelo %}
+    <div class="checkbox-inline">
+        <label>
+        <input class="{{ mat.materia.pk }}" type="checkbox" value="{{ mat.materia.pk }}{{ par.fields.sigla_paralelo }}">{{ par.fields.sigla_paralelo }}
+        </label>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+<p>
+</p>
+<Button id="btngen" onclick="getMateriasP()" class="btn btn-primary">Obtener combinaciones</Button>
+</section>
+
+<section class="card wrap">
+    Genera todos los horarios posibles sin ningun choque.
+</section>
+{% endblock %}

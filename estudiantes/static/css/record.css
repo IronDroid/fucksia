@@ -1,0 +1,20 @@
+.record{
+	background: peru;
+	max-width: 502px;
+	margin: 0 auto;
+	text-align: left;
+}
+.semestre{
+}
+.semestre div{
+	background: yellow;
+	display: inline-block;
+	font-size: 16px;
+	margin: 0 -2px;
+	padding: .25em 0;
+	text-align: center;
+	width: 72px;
+}
+.semestre div:hover{
+	background: orange;
+}

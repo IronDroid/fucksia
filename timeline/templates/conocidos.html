@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block scripts %}
+	<script src="{% static "js/grafo.js" %}"></script>
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{% static "css/conocidos.css" %}">
+{% endblock %}
+
+{% block section %}
+{% include "menu.html" %}
+<section class="card">
+	<h3>Encuentra a tus amigos, conocidos o a tus compañeros de clase. :)</h3>
+	<article>
+		{% for mat in data %}
+			<div class="mat">
+				<span>{{ mat.materia.sigla }}</span>
+				{% for par in mat.paralelo %}
+					<div class="par">
+						<div>{{ par.0.sigla_paralelo }}</div>
+						{% for est in par.1 %}
+							<script>
+							draw_grafo('{{est.social_url}}');
+							</script>
+							<div class="est-par">
+								<a target="_blank" href="{{ est.social_url }}" title="{{ est.name }}">
+									<img src="{{ est.avatar }}" alt="" />
+									<div>{{ est.name|truncatechars:8 }}</div>
+								</a>
+							</div>
+						{% empty %}
+							<div>Nadie</div>
+						{% endfor %}
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</article>
+</section>
+{% endblock section %}

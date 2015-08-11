@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block section %}
+	<section class="card">
+		<h3>Este es un paso necesario y unico para poder experimentar una nueva plataforma.</h3>
+		<article>
+			<form method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input class="btn btn-primary" type="submit" value="Guardar" />
+			</form>
+		</article>
+	</section>
+{% endblock section %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block section %}
+<section class="card">
+    <article class="ini">
+        <img src="{% static "img/login-bg.jpg" %}" class="bg-login">
+        <div class="contents">
+            <div>
+                <p class="name-app">FuckSIA</p>
+                <p>Esta nueva plataforma va reemplazar el absurdo SIA. Usando los datos del SIA y nuevas tecnologias, te damos una experiencia mejor.</p>
+            </div>
+        </div>
+        <div class="log-in">
+            <a href="{% url "social:begin" "twitter" %}">
+                <img src="{% static "img/twitter.jpg" %}" alt="">
+            </a>
+            <a href="{% url "social:begin" "facebook" %}">
+                <img src="{% static "img/facebook.jpg" %}" alt="">
+            </a>
+            <p>Valoramos tu privacidad como si fuera la nuestra. Facilitamos tu registro y es una cuenta menos para recordar.
+Disfruta de esta experiencia sin miedo ;)</p>
+        </div>
+    </article>
+    <hr class="featurette-divider">
+</section>
+<section class="card">
+    <div class="container marketing text-center">
+        <hr class="featurette-divider">
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="{% static "img/fucksia-so.jpg" %}">
+            </div>
+            <div class="col-md-5">
+                <h2 class="featurette-heading">Se social. <span class="text-muted">Cuenta como te va en tus clases.</span></h2>
+                <p class="lead">Aqui podras compartir con tus compañeros que esta pasando en las materias que estas tomando. Compartir algun apunte y saber quienes estan en esa materia que estas pasando.</p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <h2 class="featurette-heading">Horarios sin choques. <span class="text-muted">Genera tus horarios.</span></h2>
+                <p class="lead">Escoge el mejor horario dependiendo las materias y los paralelos que te toca tomar. Esto te ayudara a estar listo para tu inscripcion.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="{% static "img/fucksia-gen.jpg" %}">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="{% static "img/fucksia-hor.jpg" %}">
+            </div>
+            <div class="col-md-5">
+                <h2 class="featurette-heading">Personaliza tu horario. <span class="text-muted">Asi deberian ser nuestras inscripciones.</span></h2>
+                <p class="lead">Escoge paralelos y tu mismo arma tu horario. Aqui podras ver si vas tener choques o no. <span class="text-muted">PD: Con esto no puedes inscribirte. I'm sorry :(</span></p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <hr class="featurette-divider">
+    </div>
+</section>
+{% endblock section %}

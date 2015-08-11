@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block scripts %}
+    <script src="{% static "js/scraper.js" %}"></script>
+{% endblock scripts %}
+
+{% block section %}
+{% include "menu.html" %}
+    <section class="card" id="config">
+        <article class="loader">
+            <div id="l1"></div>
+            <div id="l2"></div>
+            <div id="l3"></div>
+            <div id="l4"></div>
+        </article>
+        <h3>Vuelve a iniciar tu sesión en el SIA, para actualizar.</h3>
+        <iframe id="sia_frame" src="{{ siaurl }}" frameborder="0"></iframe>
+        <p><span style="font-size:13px;">PD: No se guarda tus datos del SIA. Sentimos las molestias ;)</span></p>
+        {% csrf_token %}
+        <button class="btn btn-primary" id="buttonupdate" method="POST">Continuar</button>
+        <h5></h5>
+    </section>
+{% endblock section %}
