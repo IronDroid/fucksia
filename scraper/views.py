@@ -67,9 +67,10 @@ def update_scraper(request):
 def function_scrap(siaurl, estudiante):
     print 'token'
     print siaurl.split('/')[5]
+    base_url = 'http://sia.informatica.edu.bo/sia/www/'
 
     page = urllib2.urlopen(
-        'http://200.7.160.12/sia/www/'
+        base_url
         +siaurl.split('/')[5]
         +'/mostrar_informe_materias_a_cursar.php')
     url_compare = page.geturl().split('/')[6]
@@ -79,13 +80,13 @@ def function_scrap(siaurl, estudiante):
         token = page.geturl().split('/')[5]
         print token
 
-        page_record = urllib2.urlopen('http://200.7.160.12/sia/www/'+token+'/mostrar_informe_record_academico_segun_pensum.php')
+        page_record = urllib2.urlopen(base_url+token+'/mostrar_informe_record_academico_segun_pensum.php')
         record = BeautifulSoup(page_record.read())
 
-        page_inscrito = urllib2.urlopen('http://200.7.160.12/sia/www/'+token+'/mostrar_informe_inscripcion.php')
+        page_inscrito = urllib2.urlopen(base_url+token+'/mostrar_informe_inscripcion.php')
         inscrito = BeautifulSoup(page_inscrito.read())
 
-        page_horario = urllib2.urlopen('http://200.7.160.12/sia/www/'+token+'/mostrar_informe_horario_estudiante.php')
+        page_horario = urllib2.urlopen(base_url+token+'/mostrar_informe_horario_estudiante.php')
         horarios = BeautifulSoup(page_horario.read())
         print 'SCRAP OK'
         save_record(record, estudiante)
