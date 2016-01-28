@@ -25,8 +25,9 @@ def save_pensum(urltext):
 				materia.nombre = materias[y + 1]
 				materia.modulo = modulo
 				materia.save()
+				print materias[y + 2].split(' ', 1)
 				if len(materias[y + 2].split(' ', 1)) > 0 and materias[y + 2].split(' ', 1)[0] != '':
-					mats = [Materia.objects.get(sigla=sig) for sig in materias[y + 2].split(' ', 1)]
+					mats = [Materia.objects.get(sigla=sig) for sig in materias[y + 2].split(' ')]
 					materia.pre_requisito = mats
 
 def save_record(soup, estudiante):

@@ -20,21 +20,19 @@ def generador(request):
     materias = serializers.serialize('json', estudiante.inscripcion.all())
     data = list()
     for ins in estudiante.inscripcion.all():
-        mat = json.loads(serializers.serialize('json', [ins,]))[0]
+        materia = json.loads(serializers.serialize('json', [ins,]))[0]
+        paralelo = json.loads(serializers.serialize('json', Paralelo.objects.filter(id_materia=ins.pk)))
         data.append({
-            'materia':mat, 
-            'paralelo':json.loads(serializers.serialize('json', Paralelo.objects.filter(id_materia=ins.pk)))})
+            'materia':materia, 
+            'paralelo':paralelo})
 
-    return render_to_response('generador.html', {'materias': data},context_instance=RequestContext(request))
+    return render_to_response('generador.html', {'materias': data}, context_instance=RequestContext(request))
 
 def generar(request):
     if request.is_ajax():
         init = time.time()
-
         if request.GET['lista'] == '':
-            return HttpResponse(
-                json.dumps({'null': True}
-                    ), content_type="application/json; charset=uft8")
+            return HttpResponse(json.dumps({'null': True}), content_type="application/json; charset=uft8")
         simbolos = request.GET['lista'].split(';')
         materias = []
         lmp = []
