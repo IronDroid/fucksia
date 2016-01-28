@@ -1,3 +1,21 @@
+p{
+	margin: 30px 50px;
+}
+#carousel-example-generic{
+	margin-top: -17px;
+}
+#carousel-example-generic .carousel-inner .carousel-caption h3{
+	color: #fff;
+	text-shadow: 4px 4px 3px #090909, 4px 4px 3px #090909, 4px 4px 3px #090909;
+}
+#carousel-example-generic .carousel-inner .item{
+	height: 450px;
+	padding: 0 10%;
+}
+#carousel-example-generic .carousel-inner .item img{
+	width: 100%;
+	height: 100%;
+}
 .av{
 	padding: .5em .5em 0 0;
 	margin: 0 0 .5em .5em;

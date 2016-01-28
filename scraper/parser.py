@@ -32,7 +32,7 @@ def save_pensum(urltext):
 
 def save_record(soup, estudiante):
 	tables= soup('table')
-	print tables
+	#print tables
 	n = 0
 	for x in tables:
 		n = n + 1
@@ -50,6 +50,7 @@ def save_record(soup, estudiante):
 					notas = [td.get_text() for td in y.find_all('td')]
 					for linea in xrange(0, len(notas), 4):
 						materia = notas[linea:linea + 4]
+						print materia[0][:7]+"***************"
 						record, boo = RecordAcademico.objects.get_or_create(
 							estudiante=estudiante, 
 							materia=Materia.objects.get(sigla=materia[0][:7]))

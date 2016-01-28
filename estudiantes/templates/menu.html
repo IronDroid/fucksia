@@ -1,20 +1,34 @@
 <aside id="menu">
-	<a href="{% url 'home' %}" title="">
-		<h4>Home</h4>
-	</a>
-	<a href="{% url 'generador' %}" title="">
-		<h4>Generador</h4>
-	</a>
-	<a href="{% url 'horario' %}" title="">
-		<h4>Horario</h4>
-	</a>
-	<a href="{% url 'perfil' %}" title="">
-		<h4>Perfil</h4>
-	</a>
-	<a href="{% url 'conocidos' %}" title="">
-		<h4>Conocidos</h4>
-	</a>
-	<a href="{% url 'record' %}" title="">
-		<h4>Record Academico</h4>
-	</a>
+	<ul>		
+		<li>
+			<a href="{% url 'home' %}" title="">
+				<i class="fa fa-home"></i> Home
+			</a>
+		</li>
+		<li>
+			<a href="{% url 'generador' %}" title="">
+				<i class="fa fa-cogs"></i> Generador
+			</a>
+		</li>
+		<li>
+			<a href="{% url 'horario' %}" title="">
+				<i class="fa fa-calendar"></i> Horario
+			</a>
+		</li>
+		<li>
+			<a href="{% url 'perfil' %}" title="">
+				<i class="fa fa-user"></i> Perfil
+			</a>
+		</li>
+		<li>
+			<a href="{% url 'conocidos' %}" title="">
+				<i class="fa fa-users"></i> Conocidos
+			</a>
+		</li>
+		<li>
+			<a href="{% url 'record' %}" title="">
+				<i class="fa fa-history"></i> Record Academico
+			</a>
+		</li>
+	</ul>
 </aside>

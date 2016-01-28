@@ -9,8 +9,15 @@ body{
 header{
 	background: #ff0061;
 	position: relative;
-	padding: .5em;
+	height: 5.3em;
 	text-align: left;
+	vertical-align: middle;
+}
+header .logo{
+	border: #ff0061 solid 1px;
+	margin: 15px;
+	min-height: 100%;
+	width: 20%;
 }
 header, footer{
 	color: white;
@@ -43,39 +50,49 @@ footer li a{
 footer li a:hover{
 	text-transform: uppercase;
 }
+.logo{
 
+}
 #sample{
 	background: rgba(0,0,0,.19);
 	position: absolute;
 	right: 0;
-	top: 16px;
-	padding-right: .5em;
-	margin-right: 1em;
+	top: 0px;
+	padding: .3em .8em;
+	margin: .8em .8em;
 	-webkit-box-shadow: 3px 3px 8px 0 rgba(0,0,0,.7);
 	-moz-box-shadow: 3px 3px 8px 0 rgba(0,0,0,.7);
 	box-shadow: 3px 3px 8px 0 rgba(0,0,0,.7);
 }
-#sample a{
+#sample .btn_login .name-avatar, .logout{
+	margin: 0;
 	color: white;
-	text-decoration: none;
-	padding-right: .5em;
 }
-#sample img{
+.name-avatar img{
 	border-radius: 50%;
 	width: 50px;
+	margin: 0 6px 0 10px;
 }
-
 #menu{
 	background: #323e4a;
+	height: 2.5em;
+}
+#menu ul{
+	height: 100%;
+}
+#menu ul li{
+	display: inline-block;
+	padding: 10px;
+	margin: 0;
+	height: 100%;
 }
 #menu a{
 	color: white;
 	display: inline-block;
-	padding: 0 1em;
 	text-decoration: none;
-	vertical-align: top;
+	font-size: 16px !important;
 }
-#menu a:hover{
+#menu li:hover{
 	background: rgba(0,0,0,.4);
 }
 
