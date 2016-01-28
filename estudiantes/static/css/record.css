@@ -1,20 +1,19 @@
 .record{
-	background: peru;
-	max-width: 502px;
+	background: #757575;
+	max-width: 550px;
 	margin: 0 auto;
 	text-align: left;
 }
 .semestre{
 }
 .semestre div{
-	background: yellow;
+	background: #42A5F5;
 	display: inline-block;
 	font-size: 16px;
-	margin: 0 -2px;
 	padding: .25em 0;
 	text-align: center;
 	width: 72px;
 }
 .semestre div:hover{
-	background: orange;
+	background: #64B5F6;
 }
