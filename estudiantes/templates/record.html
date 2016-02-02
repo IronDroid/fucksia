@@ -11,9 +11,15 @@
 		<section class="record">
 		{% for semestre in data %}
 			<article class="semestre">
+			<div class="col-md-1"></div>
+			<div class="col-md-2">Semestre:  </div>
+			<div class="row">
 				{% for mat in semestre %}
-					<div>{{ mat.sigla }} (100)</div>
+					<div class="col-md-1">{{ mat.sigla }} <br>( NOTA )</div>
 				{% endfor %}
+			</div>
+			<div class="col-md-2"></div>
+			<br>
 			</article>
 		{% endfor %}
 		</section>

@@ -43,7 +43,7 @@ def record(request):
 	semestres = Modulo.objects.exclude(nombre='OPTATIVAS')
 	for count, semestre in enumerate(semestres):
 		materias = Materia.objects.filter(modulo=semestre)
-		materias = [{'sigla':m.sigla, 'row':count,'col':c} for c,m in enumerate(materias)]
+		materias = [{'sigla':m.sigla, 'row':count,'col':c } for c,m in enumerate(materias)]
 		list_materias.append(materias)
 	return render(request, 'record.html', {'data':list_materias})
 
