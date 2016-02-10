@@ -1,5 +1,4 @@
 .record{
-	background: #757575;
 	max-width: 550px;
 	margin: 0 auto;
 	text-align: left;
@@ -7,13 +6,32 @@
 .semestre{
 }
 .semestre div{
-	background: #42A5F5;
 	display: inline-block;
 	font-size: 16px;
 	padding: .25em 0;
+	margin-bottom: .25em;
+	cursor: pointer;
 	text-align: center;
 	width: 72px;
 }
-.semestre div:hover{
-	background: #64B5F6;
+
+.semestre .mat-a{
+	background: #81C784;
+	transition-duration: .35s;
+	-webkit-transition-duration: .35s;
+	-moz-transition-duration: .35s;
+	-o-transition-duration: .35s;
+}
+.semestre .mat-a:hover{
+	background: #66BB6A;
+}
+.semestre .mat-na{
+	background: #BDBDBD;
+	transition-duration: .35s;
+	-webkit-transition-duration: .35s;
+	-moz-transition-duration: .35s;
+	-o-transition-duration: .35s;
+}
+.semestre .mat-na:hover{
+	background: #9E9E9E;
 }

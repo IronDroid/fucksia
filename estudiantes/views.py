@@ -38,12 +38,14 @@ def perfil(request):
 
 @login_required
 def record(request):
-	import json
+	estudiante = Estudiante.objects.get(uid=request.user)
 	list_materias = list()
 	semestres = Modulo.objects.exclude(nombre='OPTATIVAS')
 	for count, semestre in enumerate(semestres):
 		materias = Materia.objects.filter(modulo=semestre)
-		materias = [{'sigla':m.sigla, 'row':count,'col':c} for c,m in enumerate(materias)]
+		materias = [{'sigla':m.sigla, 
+		'nota': RecordAcademico.objects.filter(materia=m, estudiante=estudiante), 
+		'row':count,'col':c} for c,m in enumerate(materias)]
 		list_materias.append(materias)
 	return render(request, 'record.html', {'data':list_materias})
 
@@ -55,7 +57,7 @@ def record_grafo(request):
 		mats_habilitadas = [x.sigla for x in Materia.objects.filter(pre_requisito=mat)]
 		mat = [m.sigla for m in mat.pre_requisito.all()]
 		mat = mat + mats_habilitadas
-		mat.append(Materia.objects.get(sigla=sigla).sigla)
+		print mat
 		return HttpResponse(
 			json.dumps({'sigla_mat':mat}),
 			content_type='application/json; charset=uft-8')

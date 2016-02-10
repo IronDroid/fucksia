@@ -5,6 +5,10 @@
 	<link rel="stylesheet" href="{% static "css/record.css" %}">
 {% endblock %}
 
+{% block scripts %}
+	<script src="{% static "js/record.js" %}"></script>
+{% endblock %}
+
 {% block section %}
 {% include "menu.html" %}
 	<section class="card">
@@ -12,7 +16,17 @@
 		{% for semestre in data %}
 			<article class="semestre">
 				{% for mat in semestre %}
-					<div>{{ mat.sigla }} (100)</div>
+					 
+					{% for record in mat.nota %}
+					<div class="mat-a" data-sigla="{{ mat.sigla }}">{{ mat.sigla }}
+					({{record.nota}})
+					</div>
+					{% empty %}
+					<div class="mat-na" data-sigla="{{ mat.sigla }}">{{ mat.sigla }}
+					(0)
+					</div>
+					{% endfor %}
+					
 				{% endfor %}
 			</article>
 		{% endfor %}
