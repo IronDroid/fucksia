@@ -1,7 +1,7 @@
 <div class="btn_login">
-	<a href="{% url 'perfil' %}">
-		<img src="{{ estudiante.avatar }}">
+	<a class="name-avatar" href="{% url 'perfil' %}">
 		<div>{{ estudiante.name }}</div>
-	</a>
-	<a href="{% url 'logout' %}">Salir :(</a>
+        <img src="{{ estudiante.avatar }}">
+    </a>
+	<a class="logout" href="{% url 'logout' %}">Salir</a>
 </div>
